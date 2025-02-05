@@ -1,5 +1,6 @@
-import { useState, useContext } from "react";
-import { MessageContext } from "../contexts/MessageContext";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setMessage, clearMessage } from "../redux/messageSlice";
 import {
   StateControlWrapper,
   StyledInput,
@@ -9,17 +10,17 @@ import {
 
 function StateControl() {
   const [inputValue, setInputValue] = useState("");
-  const { setMessage } = useContext(MessageContext);
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setMessage(inputValue);
+    dispatch(setMessage(inputValue));
     setInputValue("");
   };
 
   const handleReset = () => {
     setInputValue("");
-    setMessage("");
+    dispatch(clearMessage());
   };
 
   return (

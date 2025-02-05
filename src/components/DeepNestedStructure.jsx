@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { MessageContext } from "../contexts/MessageContext";
+import { useSelector } from "react-redux";
 import {
   LevelContainer,
   MessageDisplayWrapper,
@@ -33,7 +32,7 @@ function Level3() {
 }
 
 function MessageDisplay() {
-  const { message } = useContext(MessageContext);
+  const message = useSelector((state) => state.message.text);
 
   return (
     <MessageDisplayWrapper>

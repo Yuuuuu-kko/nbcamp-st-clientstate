@@ -1,6 +1,7 @@
 import StateControl from "./components/StateManager";
 import Level1 from "./components/DeepNestedStructure";
-import { MessageProvider } from "./contexts/MessageContext";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 import {
   AppContainer,
   Content,
@@ -9,9 +10,9 @@ import {
 
 function App() {
   return (
-    <MessageProvider>
+    <Provider store={store}>
       <AppContainer>
-        <h2>[내배캠] 스탠다드반 프로젝트 - Context API 예제</h2>
+        <h2>[내배캠] 스탠다드반 프로젝트 - Redux Toolkit 예제</h2>
         <Content>
           <StateControl />
           <DeepStructure>
@@ -19,7 +20,7 @@ function App() {
           </DeepStructure>
         </Content>
       </AppContainer>
-    </MessageProvider>
+    </Provider>
   );
 }
 

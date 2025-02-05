@@ -1,0 +1,14 @@
+[세팅을 위한 단계]
+1. 설치(Redux Toolkit 패키지 설치하기) : yarn add react-redux @reduxjs/toolkit
+2. 스토어(Redux store 생성하기) : configureStore() 사용
+3. 슬라이스(Slice 생성하기) : createSlice() 사용하여 reducer와 actions 정의
+4. 프로바이더(Redux Provider로 앱 감싸기) : <Provider store={store}> 사용
+
+[사용을 위한 단계]
+1. 이 : 이벤트 발생
+2. 디 : 디스패치 호출
+3. 액 : 디스패치는 인자로 액션 객체를 받음
+4. 타 : 액션의 타입을 정의함
+5. 페 : 액션의 페이로드를 정의함
+6. 써 : 리듀서는 액션의 타입과 페이로드를 받아 상태를 업데이트함
+7. 스 : 스토어는 리듀서를 통해 상태를 업데이트함(스테이트가 변경되어 컴포넌트가 리렌더링됨)
